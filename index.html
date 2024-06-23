@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full" id="main">
+      <nav
+        class="md:flex hidden justify-between px-10 h-20 items-center ibm-plex-sans-regular"
+      >
+        <div class="w-[163px] flex justify-center items-center cursor-pointer">
+          <img src="images/whole.png" alt="" />
+        </div>
+        <div
+          class="flex bg-[#F2F2F2] items-center md:w-72 xl:w-80 h-10 rounded-full gap-3"
+        >
+          <img
+            class="w-[22px] h-[22px] ml-3 text-[#5C5C5C]"
+            src="images/search.png"
+            alt=""
+          /><input
+            class="bg-[#F2F2F2] w-full h-[42px] rounded-full outline-none xl:placeholder:text-sm placeholder:font-medium md:placeholder:text-xs md:placeholder:font-medium"
+            type="text"
+            placeholder="Search for your favorite groups in ATG"
+          />
+        </div>
+        <div class="flex font-medium cursor-pointer" id="formopen">
+          Create account.
+          <p class="text-blue-500">It’s Free!</p>
+          <img src="images/baseline-arrow_drop_down-24px.png" alt="" />
+        </div>
+      </nav>
+
+      <!-- mobile -->
+      <!-- <nav class="flex w-full bg-black">
+        <div><img src="images/arrow_back_24px_outlined.svg" alt=""></div>
+        <div></div>
+      </nav> -->
+
+      <div class="md:hidden w-full h-64">
+        <img
+          class="object-cover w-full h-full brightness-50"
+          src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VlMK9~iAQRpXo-W5txR7OSIlYv6aIUuE7p2Hsun89vKmQDCKYbr-ZUE4A7Yl9XD~yCZSx22yyJuGSZ2PLA7v~ATFMybGzlV2L-a~-o6YEzjTPRMYRX6ysiL4vSKdcXXAQbxOAlnE3vDey6mBNWpeYKThwBwck5jVgya~4Is5Xlrf0b6GlGnmkpganoPB4o7iwuzvw6xv6NbF9kXi-lc~-u9i3VLtng8FK4nIkO2hsit7j2n~odcHvzmVTNDYcjQLgTuCRR1ZCRJD7D87Jatvi-~dEuPEaZQcC9siBT5J7iAblfAATTt2MvyK62rOjLTxm9DtwhUWkUUp2oztjagAxg__"
+          alt=""
+        />
+        <nav
+          class="flex flex-col h-64 w-full p-3 justify-between absolute top-0 ibm-plex-sans-regular"
+        >
+          <div class="flex justify-between w-full">
+            <div>
+              <img src="images/arrow_back_24px_outlined.svg" alt="" />
+            </div>
+            <button id="joingrp" class="border text-white rounded text-sm p-1">
+              Join Group
+            </button>
+          </div>
+          <div class="text-white px-3 pb-8">
+            <div class="text-2xl font-medium">Computer Engineering</div>
+            <div class="text-sm">142,765 Computer Engineers follow this</div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="">
+        <img
+          class="overflow-hidden brightness-50 hidden md:block md:h-[440px] object-cover w-full contrast-125"
+          src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VlMK9~iAQRpXo-W5txR7OSIlYv6aIUuE7p2Hsun89vKmQDCKYbr-ZUE4A7Yl9XD~yCZSx22yyJuGSZ2PLA7v~ATFMybGzlV2L-a~-o6YEzjTPRMYRX6ysiL4vSKdcXXAQbxOAlnE3vDey6mBNWpeYKThwBwck5jVgya~4Is5Xlrf0b6GlGnmkpganoPB4o7iwuzvw6xv6NbF9kXi-lc~-u9i3VLtng8FK4nIkO2hsit7j2n~odcHvzmVTNDYcjQLgTuCRR1ZCRJD7D87Jatvi-~dEuPEaZQcC9siBT5J7iAblfAATTt2MvyK62rOjLTxm9DtwhUWkUUp2oztjagAxg__"
+          alt=""
+        />
+      </div>
+
+      <div class="xl:w-[1024px] lg:w-[768px] md:w-[640px] mx-auto">
+        <div
+          class="ibm-plex-sans-regular mx-auto top-96 text-white hidden md:block absolute"
+        >
+          <div class="text-4xl font-medium">Computer Engineering</div>
+          <div class="text-lg">142,765 Computer Engineers follow this</div>
+        </div>
+      </div>
+
+      <div class="mt-4 mx-auto xl:w-[1024px] lg:w-[768px] md:w-[640px]">
+        <!-- mobile -->
+
+        <div
+          class="md:hidden flex px-3 ibm-plex-sans-regular justify-between items-center"
+        >
+          <div class="font-semibold">Posts(368)</div>
+          <button
+            class="flex gap-1 text-sm bg-[#F1F3F5] justify-between px-2 py-1 rounded font-medium"
+          >
+            <div>Filter:All</div>
+            <img src="images/arrow.png" alt="" />
+          </button>
+        </div>
+
+        <div class="md:flex hidden justify-between items-center">
+          <div
+            class="flex gap-4 text-[#8A8A8A] ibm-plex-sans-regular cursor-pointer"
+          >
+            <div class="text-black w-full">
+              All Post(32)
+              <div class="w-[93px] top-4 bg-black h-[0.5px] relative"></div>
+            </div>
+            <div class="hover:text-[]">Article</div>
+            <div>Event</div>
+            <div>Education</div>
+            <div>Job</div>
+          </div>
+
+          <div class="ibm-plex-sans-regular font-medium flex gap-3">
+            <button
+              class="bg-[#EDEEF0] rounded h-10 justify-center items-center w-32 flex"
+            >
+              <div>Write a Post</div>
+              <img src="images/arrow.png" alt="" />
+            </button>
+            <button
+              class="bg-[#2F6CE5] rounded gap-2 text-white flex h-10 justify-center items-center w-32"
+            >
+              <img src="images/baseline-group_add-24px.png" alt="" />Join group
+            </button>
+          </div>
+        </div>
+        <div class="hidden md:block w-full bg-[#E0E0E0] h-[0.5px] mt-2"></div>
+
+        <div class="flex mt-3 justify-between w-full">
+          <!-- card -->
+          <div>
+            <!-- <div
+              id="buttonlist"
+              class="relative top-[23%] -right-[20%] overflow-hidden overflow-x-hidden"
+            >
+              <div
+                class="flex flex-col font-normal pl-2 justify-around shadow-xl rounded w-32 h-20 text-xs bg-white shadow"
+              >
+                <div>Edit</div>
+                <div>Report</div>
+                <div>Option 3</div>
+              </div>
+            </div> -->
+            <div class="flex flex-col gap-3 ibm-plex-sans-regular px-3 md:px-0">
+              <div
+                class="flex flex-col xl:w-[692px] lg:w-4/5 md:w-[88%] w-full border rounded-md"
+              >
+                <img src="images/Rectangle 5.png" alt="" />
+
+                <div class="p-4">
+                  <div class="font-medium text-lg">✍️ Article</div>
+                  <div class="flex justify-between font-medium mt-2">
+                    <div class="md:text-[1.3rem] text-lg lg:text-2xl">
+                      What if famous brands had regular fonts? Meet
+                      RegulaBrands!
+                    </div>
+                    <!-- <button class="md:text-3xl text-2xl cursor-pointer font-medium bg-gray-500  h-2">...</button> -->
+                    <button
+                      id="buttdot"
+                      class="flex justify-center items-center"
+                    >
+                      <img
+                        class="object-cover w-[28px] h-[28px]"
+                        src="images/baseline-more_vert-24px.png"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                  <div
+                    class="text-[#5C5C5C] md:text-base text-sm lg:text-lg my-3 w-full"
+                  >
+                    I’ve worked in UX for the better part of a decade. From now
+                    on, I plan to rei…
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="flex lg:gap-3 sm:gap-2 gap-3 items-center">
+                      <div class="rounded-full">
+                        <img src="images/Rectangle 3 (1).png" alt="" />
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-semibold text-base lg:text-lg">
+                          Sarthak Kamra
+                        </div>
+                        <div class="text-xs md:hidden">1.4k views</div>
+                      </div>
+                    </div>
+                    <div class="flex lg:gap-5 sm:gap-3 gap-5">
+                      <div
+                        class="md:flex lg:gap-2 sm:gap-1 gap-2 items-center hidden"
+                      >
+                        <div class="w-[20px]">
+                          <img class="opacity-40" src="images/show.png" alt="" />
+                        </div>
+                        <div
+                          class="lg:text-sm md:text-xs text-[#525252] font-medium"
+                        >
+                          1.4k views
+                        </div>
+                      </div>
+                      <button
+                        class="flex justify-center items-center rounded bg-[#EDEEF0] w-[42px] h-[36px]"
+                      >
+                        <img src="images/Vector.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col xl:w-[692px] lg:w-4/5 md:w-[88%] w-full border rounded-md"
+              >
+                <img src="images/Rectangle 51.png" alt="" />
+                <div class="p-4">
+                  <div class="font-medium text-lg">🔬️ Education</div>
+                  <div class="flex justify-between font-medium mt-2">
+                    <div class="md:text-[1.3rem] text-lg lg:text-2xl">
+                      Tax Benefits for Investment under National Pension Scheme
+                      launched by Government
+                    </div>
+                    <div
+                      class="md:text-3xl text-2xl cursor-pointer font-medium"
+                    >
+                      ...
+                    </div>
+                  </div>
+                  <div
+                    class="text-[#5C5C5C] md:text-base text-sm lg:text-lg my-3 w-full"
+                  >
+                    I’ve worked in UX for the better part of a decade. From now
+                    on, I plan to rei…
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="flex lg:gap-3 sm:gap-2 gap-3 items-center">
+                      <div class="rounded-full">
+                        <img src="images/Rectangle 31.png" alt="" />
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-semibold text-base lg:text-lg">
+                          Sarah West
+                        </div>
+                        <div class="text-xs md:hidden">1.4k views</div>
+                      </div>
+                    </div>
+                    <div class="flex lg:gap-5 sm:gap-3 gap-5">
+                      <div
+                        class="md:flex lg:gap-2 sm:gap-1 gap-2 items-center hidden"
+                      >
+                        <div class="w-[20px]">
+                          <img class="opacity-40" src="images/show.png" alt="" />
+                        </div>
+                        <div
+                          class="lg:text-sm md:text-xs text-[#525252] font-medium"
+                        >
+                          1.4k views
+                        </div>
+                      </div>
+                      <button
+                        class="flex justify-center items-center rounded bg-[#EDEEF0] w-[42px] h-[36px]"
+                      >
+                        <img src="images/Vector.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col xl:w-[692px] lg:w-4/5 md:w-[88%] w-full border rounded-md"
+              >
+                <img src="images/Rectangle 52.png" alt="" />
+                <div class="p-4">
+                  <div class="font-medium text-lg">🗓️ Meetup</div>
+                  <div class="flex justify-between font-medium mt-2">
+                    <div class="md:text-[1.3rem] text-lg lg:text-2xl">
+                      Finance & Investment Elite Social Mixer @Lujiazui
+                    </div>
+                    <div
+                      class="md:text-3xl text-2xl cursor-pointer font-medium"
+                    >
+                      ...
+                    </div>
+                  </div>
+                  <div class="flex font-medium text-sm md:gap-24 gap-6 my-2">
+                    <div class="flex gap-2 items-center">
+                      <div><img src="images/calendar.png" alt="" /></div>
+                      <div>Fri, 12 Oct, 2018</div>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                      <div><img src="images/location.png" alt="" /></div>
+                      <div>Ahmedabad, India</div>
+                    </div>
+                  </div>
+                  <button
+                    class="text-[#E56135] w-full rounded-md justify-center flex items-center border py-2 my-2"
+                  >
+                    Visit Website
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <div class="flex lg:gap-3 sm:gap-2 gap-3 items-center">
+                      <div class="rounded-full">
+                        <img src="images/Rectangle 32.png" alt="" />
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-semibold text-base lg:text-lg">
+                          Ronal Jones
+                        </div>
+                        <div class="text-xs md:hidden">1.4k views</div>
+                      </div>
+                    </div>
+                    <div class="flex lg:gap-5 sm:gap-3 gap-5">
+                      <div
+                        class="md:flex lg:gap-2 sm:gap-1 gap-2 items-center hidden"
+                      >
+                        <div class="w-[20px]">
+                          <img class="opacity-40" src="images/show.png" alt="" />
+                        </div>
+                        <div
+                          class="lg:text-sm md:text-xs text-[#525252] font-medium"
+                        >
+                          1.4k views
+                        </div>
+                      </div>
+                      <button
+                        class="flex justify-center items-center rounded bg-[#EDEEF0] w-[42px] h-[36px]"
+                      >
+                        <img src="images/Vector.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col xl:w-[692px] lg:w-4/5 md:w-[88%] w-full border rounded-md"
+              >
+                <div class="p-4">
+                  <div class="font-medium text-lg">💼️ Job</div>
+                  <div class="flex justify-between font-medium mt-2">
+                    <div class="md:text-[1.3rem] text-lg lg:text-2xl">
+                      Software Developer
+                    </div>
+                    <div
+                      class="md:text-3xl text-2xl cursor-pointer font-medium"
+                    >
+                      ...
+                    </div>
+                  </div>
+                  <div class="flex font-medium md:text-sm md:gap-24 gap-6 my-2">
+                    <div class="flex gap-2 items-center">
+                      <div><img src="images/calendar.png" alt="" /></div>
+                      <div>Innovaccer Analytics Private Ltd.</div>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                      <div><img src="images/location.png" alt="" /></div>
+                      <div>Noida, India</div>
+                    </div>
+                  </div>
+                  <button
+                    class="text-[#02B875] w-full rounded-md justify-center flex items-center border py-2 my-2"
+                  >
+                    Apply on Timesjobs
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <div class="flex lg:gap-3 sm:gap-2 gap-3 items-center">
+                      <div class="rounded-full">
+                        <img src="images/Rectangle 33.png" alt="" />
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-semibold text-base lg:text-lg">
+                          Joseph Gray
+                        </div>
+                        <div class="text-xs md:hidden">1.4k views</div>
+                      </div>
+                    </div>
+                    <div class="flex lg:gap-5 sm:gap-3 gap-5">
+                      <div
+                        class="md:flex lg:gap-2 sm:gap-1 gap-2 items-center hidden"
+                      >
+                        <div class="w-[20px]">
+                          <img class="opacity-40" src="images/show.png" alt="" />
+                        </div>
+                        <div
+                          class="lg:text-sm md:text-xs text-[#525252] font-medium"
+                        >
+                          1.4k views
+                        </div>
+                      </div>
+                      <button
+                        class="flex justify-center items-center rounded bg-[#EDEEF0] w-[42px] h-[36px]"
+                      >
+                        <img src="images/Vector.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- right section -->
+          <div
+            class="flex flex-col bg-gray w-64 lg:w-80 md:w-2/3 xl:w-64 hidden md:flex"
+          >
+            <div class="flex w-full justify-between items-center">
+              <div class="flex gap-2 items-center">
+                <img
+                  class="w-[18px] h-[18px] opacity"
+                  src="images/outline-location_on-24px 2.png"
+                  alt=""
+                />
+                <input
+                  class="outline-none"
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter your location"
+                />
+              </div>
+
+              <div><img src="images/baseline-clear-24px.png" alt="" /></div>
+            </div>
+            <div class="w-full h-[0.5px] bg-black opacity-20 my-2"></div>
+            <div class="flex gap-1 mt-3">
+              <div>
+                <img
+                  class="w-[24px] opacity-40 pt-1"
+                  src="images/Vector (1).png"
+                  alt=""
+                />
+              </div>
+              <div class="text-xs opacity-40">
+                Your location will help us serve better and extend a
+                personalised experience.
+              </div>
+            </div>
+            <div class="flex mt-9 w-auto gap-1 items-center">
+              <div>
+                <img src="images/thumbs.png" alt="" />
+              </div>
+              <div>RECOMMENDED GROUPS</div>
+            </div>
+            <div>
+              <div class="flex justify-between mt-5 items-center">
+                <div class="flex items-center gap-3">
+                  <div>
+                    <img
+                      class="w-[36px] h-[36px] rounded-full"
+                      src="https://s3-alpha-sig.figma.com/img/bb0d/5f13/7ffa8afe7647578af2381ac9090c32e2?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oZXe5VGb3a75kJfwPhyPTAnE6zN6e-0tO7XU3Qu1vvW5bg6EDhnl1jsamSEjhYsFkRTLQR-VFthvX-XhOQ9fhoXzjEGdnOYXdQ4kreL5wy1sN~oRu~Mgcln7ZvRR4YOw1qD5EkZuU6fi2Q4nsJVf4G6mcHywQNbH0RZV2yddFLRv2ZUQoJ3HcUtd9VeOESj-zV~zBV1zkg99TbfOPCqW1hJhsKxi4udbIfarrsi9AXxkzsGEAofmxh~SBKCfo7eDb2CGmIeU5mJ-AnxiFyuiZuXtu~eXmbYyWGXH6qqTqEuiB922WZ8YgzLfgNX1cCsXYRurouRVtf~G2pDCHvVtSQ__"
+                      alt=""
+                    />
+                  </div>
+                  <div>Activism</div>
+                </div>
+                <button
+                  class="rounded-full bg-[#EDEEF0] w-[60px] h-[24px] text-sm"
+                >
+                  Follow
+                </button>
+              </div>
+
+              <div class="flex justify-between mt-5 items-center">
+                <div class="flex items-center gap-3">
+                  <div>
+                    <img
+                      class="w-[36px] h-[36px] rounded-full"
+                      src="images/Rectangle 61.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>Leisure</div>
+                </div>
+                <button
+                  class="rounded-full bg-[#EDEEF0] w-[60px] h-[24px] text-sm"
+                >
+                  Follow
+                </button>
+              </div>
+
+              <div class="flex justify-between mt-5 items-center">
+                <div class="flex items-center gap-3">
+                  <div>
+                    <img
+                      class="w-[36px] h-[36px] rounded-full"
+                      src="images/Rectangle 62.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>MBA</div>
+                </div>
+                <button
+                  class="rounded-full bg-[#EDEEF0] w-[60px] h-[24px] text-sm"
+                >
+                  Follow
+                </button>
+              </div>
+
+              <div class="flex justify-between mt-5 items-center">
+                <div class="flex items-center gap-3">
+                  <div>
+                    <img
+                      class="w-[36px] h-[36px] rounded-full"
+                      src="images/Rectangle 63.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>Philosophy</div>
+                </div>
+                <button
+                  class="rounded-full bg-[#EDEEF0] w-[60px] h-[24px] text-sm"
+                >
+                  Follow
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- login logout -->
+    <div
+      class="absolute hidden justify-center w-full h-full top-20"
+      id="signform"
+    >
+      <div
+        class="flex justify-end w-[780px] my-1 cursor-pointer mx-auto"
+        id="cross"
+        onclick="closeForm"
+      >
+        <img src="images/Group 4.png" alt="" />
+      </div>
+      <div
+        class="w-[750px] h-[553px] rounded-md mx-auto ibm-plex-sans-regular bg-white"
+      >
+        <div
+          class="w-full h-10 bg-[#EFFFF4] text-[#008A45] pt-2 mb-6 rounded-t-md text-center"
+        >
+          Let's learn, share & inspire each other with our passion for computer
+          engineering. Sign up now 🤘🏼
+        </div>
+        <div class="flex justify-between px-9">
+          <div class="flex flex-col">
+            <div class="text-xl font-medium mb-4">Create Account</div>
+            <div class="flex flex-col w-[320px] h-[181px]">
+              <div class="flex w-[320px]">
+                <div>
+                  <input
+                    class="bg-[#F7F8FA] border-[1.5px] w-[100%] h-[46px] placeholder:px-2 placeholder:font-medium"
+                    type="text"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div>
+                  <input
+                    class="bg-[#F7F8FA] border-[1.5px] w-[100%] h-[46px] placeholder:px-2 placeholder:font-medium"
+                    type="text"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div>
+              <div>
+                <input
+                  class="bg-[#F7F8FA] w-full border-[1.5px] placeholder:px-2 placeholder:font-medium h-[46px]"
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Email"
+                />
+              </div>
+              <div>
+                <input
+                  class="bg-[#F7F8FA] w-full border-[1.5px] h-[46px] placeholder:px-2 placeholder:font-medium"
+                  type=" password"
+                  name=""
+                  id=""
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <input
+                  class="bg-[#F7F8FA] w-full border-[1.5px] h-[46px] placeholder:px-2 placeholder:font-medium"
+                  type="password"
+                  name=""
+                  id=""
+                  placeholder="Confirm Password"
+                />
+              </div>
+            </div>
+            <button
+              class="bg-[#2F6CE5] my-6 rounded-3xl text-white text-sm font-medium p-2"
+            >
+              Create Account
+            </button>
+
+            <button
+              class="flex justify-center gap-2 p-2 items-center text-sm border rounded mb-2"
+            >
+              <img
+                class="w-[16px] h-[16px]"
+                src="images/f_logo_RGB-Blue_1024.png"
+                alt=""
+              />
+              <div>Sign up with Facebook</div>
+            </button>
+            <button
+              class="flex justify-center gap-2 p-2 items-center text-sm border rounded"
+            >
+              <img class="w-[16px] h-[16px]" src="images/google.png" alt="" />
+              <div>Sign up with Google</div>
+            </button>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex justify-end mb-4 gap-1 font-medium">
+              <div class="">Already have an account?</div>
+              <div class="text-blue-500 cursor-pointer" id="login">Sign In</div>
+            </div>
+            <div><img src="images/Group 3.png" alt="" /></div>
+
+            <div class="text-xs opacity-60 mt-4">
+              By signing up, you agree to our Terms & conditions, Privacy policy
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute hidden justify-center top-20 w-full" id="logform">
+      <div
+        class="flex justify-end w-[780px] my-1 cursor-pointer mx-auto"
+        id="cross2"
+        onclick="closeForm"
+      >
+        <img src="images/Group 4.png" alt="" />
+      </div>
+      <div class="w-[750px] rounded-md mx-auto ibm-plex-sans-regular bg-white">
+        <div
+          class="w-full h-10 bg-[#EFFFF4] text-[#008A45] pt-2 mb-6 rounded-t-md text-center"
+        >
+          Let's learn, share & inspire each other with our passion for computer
+          engineering. Sign up now 🤘🏼
+        </div>
+        <div class="flex justify-between px-9">
+          <div class="flex flex-col">
+            <div class="text-xl font-medium mb-4">Sign In</div>
+            <div class="flex flex-col w-[320px]">
+              <div>
+                <input
+                  class="bg-[#F7F8FA] w-full border-[1.5px] placeholder:px-2 placeholder:font-medium h-[46px]"
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Email"
+                />
+              </div>
+              <div>
+                <input
+                  class="bg-[#F7F8FA] w-full border-[1.5px] h-[46px] placeholder:px-2 placeholder:font-medium"
+                  type=" password"
+                  name=""
+                  id=""
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <button
+              class="bg-[#2F6CE5] my-6 rounded-3xl text-white text-sm font-medium p-2"
+            >
+              Create Account
+            </button>
+
+            <button
+              class="flex justify-center gap-2 p-2 items-center text-sm border rounded mb-2"
+            >
+              <img
+                class="w-[16px] h-[16px]"
+                src="images/f_logo_RGB-Blue_1024.png"
+                alt=""
+              />
+              <div>Sign up with Facebook</div>
+            </button>
+            <button
+              class="flex justify-center gap-2 p-2 items-center text-sm border rounded"
+            >
+              <img class="w-[16px] h-[16px]" src="images/google.png" alt="" />
+              <div>Sign up with Google</div>
+            </button>
+
+            <div
+              class="flex justify-center font-medium text-black mt-6 text-sm"
+            >
+              Forgot Password?
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex justify-end mb-4 gap-1 font-medium">
+              <div class="">Don't have an account yet?</div>
+              <div class="text-blue-500 cursor-pointer" id="signup">
+                Create new for free!
+              </div>
+            </div>
+            <div><img src="images/Group 3.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- login for mobile -->
+    <div
+      id="signmob"
+      class="px-4 py-3 hidden md:hidden absolute top-40 h-[90%] bg-white w-full rounded-t-xl"
+    >
+      <div class="flex w-full justify-between ibm-plex-sans-regular">
+        <div class="font-medium text-lg mb-2">Create Account</div>
+        <div id="closemob" class="cursor-pointer">
+          <img src="images/crossvector.png" class="grayscale-500" alt="" />
+        </div>
+      </div>
+
+      <div>
+        <div class="flex flex-col w-full">
+          <div class="flex">
+            <div>
+              <input
+                class="bg-[#F7F8FA] border-[1.5px] w-full h-[46px] placeholder:px-2 placeholder:font-medium"
+                type="text"
+                placeholder="First Name"
+              />
+            </div>
+            <div>
+              <input
+                class="bg-[#F7F8FA] border-[1.5px] w-full h-[46px] placeholder:px-2 placeholder:font-medium"
+                type="text"
+                placeholder="Last Name"
+              />
+            </div>
+          </div>
+          <div>
+            <input
+              class="bg-[#F7F8FA] w-full border-[1.5px] placeholder:px-2 placeholder:font-medium h-[46px]"
+              type="email"
+              name=""
+              id=""
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <input
+              class="bg-[#F7F8FA] w-full border-[1.5px] h-[46px] placeholder:px-2 placeholder:font-medium"
+              type=" password"
+              name=""
+              id=""
+              placeholder="Password"
+            />
+          </div>
+          <div>
+            <input
+              class="bg-[#F7F8FA] w-full border-[1.5px] h-[46px] placeholder:px-2 placeholder:font-medium"
+              type="password"
+              name=""
+              id=""
+              placeholder="Confirm Password"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between mt-4 items-center font-medium">
+        <button class="bg-[#2F6CE5] px-4 py-1 text-white rounded-3xl">
+          Create Account
+        </button>
+        <div id="mobilelogin" class="text-sm underline text-[#495057]">
+          or,Sign In
+        </div>
+      </div>
+
+      <button
+        class="flex w-full justify-center gap-2 p-2 items-center text-sm border rounded mb-2 mt-4"
+      >
+        <img class="w-[16px] h-[16px]" src="images/f_logo_RGB-Blue_1024.png" alt="" />
+        <div>Sign up with Facebook</div>
+      </button>
+      <button
+        class="flex w-full justify-center gap-2 p-2 items-center text-sm border rounded"
+      >
+        <img class="w-[16px] h-[16px]" src="images/google.png" alt="" />
+        <div>Sign up with Google</div>
+      </button>
+
+      <div class="text-center text-xs opacity-60 mt-4">
+        By signing up, you agree to our Terms & conditions, Privacy policy
+      </div>
+    </div>
+
+    <div
+      id="logmob"
+      class="px-4 py-3 absolute md:hidden hidden top-40 bg-white w-full h-[90%] rounded-t-xl"
+    >
+      <div class="flex w-full mb-3 justify-between ibm-plex-sans-regular">
+        <div class="font-semibold text-lg mb-2">Welcome back!</div>
+        <div id="closemob2" class="cursor-pointer">
+          <img src="images/crossvector.png" class="grayscale-500" alt="" />
+        </div>
+      </div>
+
+      <div>
+        <div class="flex flex-col w-full mb-6">
+          <div>
+            <input
+              class="bg-[#F7F8FA] w-full border-[1.5px] placeholder:px-2 placeholder:font-medium h-[46px]"
+              type="email"
+              name=""
+              id=""
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <input
+              class="bg-[#F7F8FA] w-full border-[1.5px] h-[46px] placeholder:px-2 placeholder:font-medium"
+              type=" password"
+              name=""
+              id=""
+              placeholder="Password"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between mt-4 mb-6 items-center font-medium">
+        <button class="bg-[#2F6CE5] px-12 py-1 text-white rounded-3xl">
+          Sign In
+        </button>
+        <div id="mobilesignup" class="text-sm underline text-[#495057]">
+          or,Create Account
+        </div>
+      </div>
+
+      <button
+        class="flex w-full justify-center gap-2 p-2 items-center text-sm border rounded mb-2 mt-4"
+      >
+        <img class="w-[16px] h-[16px]" src="images/f_logo_RGB-Blue_1024.png" alt="" />
+        <div>Sign up with Facebook</div>
+      </button>
+      <button
+        class="flex w-full justify-center gap-2 p-2 items-center text-sm border rounded"
+      >
+        <img class="w-[16px] h-[16px]" src="images/google.png" alt="" />
+        <div>Sign up with Google</div>
+      </button>
+
+      <div class="text-center text-xs font-medium mt-4">Forgot Password?</div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  /
+</html>
